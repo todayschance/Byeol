@@ -1,2 +1,1 @@
-# byeols
-### a Sails application
+#별자리
