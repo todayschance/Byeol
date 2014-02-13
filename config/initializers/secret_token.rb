@@ -9,4 +9,16 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Byeol::Application.config.secret_key_base = '279e8f54c3b4497024223abf04f1a32b1e9ca354b79ed7bcd7d88440a2ffffd574020185d435af59011ec9acaa3e6540c5b745fca51b52e4c2dbbb0e2c9d2e71'
+require 'securerandom'
+
+def secure_token
+	token_file = Rails.root.join('.secret')
+	if File.exist? token_file
+		File.read(token_file).chomp
+	else
+		token = SecureRandom.hex 64
+		File.write token_file, token
+	end
+	return token
+end
+Byeol::Application.config.secret_key_base = token
