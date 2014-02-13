@@ -18,7 +18,7 @@ def secure_token
 	else
 		token = SecureRandom.hex 64
 		File.write token_file, token
+		token
 	end
-	return token
 end
-Byeol::Application.config.secret_key_base = token
+Byeol::Application.config.secret_key_base = secure_token
