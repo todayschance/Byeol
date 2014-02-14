@@ -17,3 +17,6 @@
 
 # secure_token
 .secret
+
+# server env file
+.env
