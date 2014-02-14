@@ -1,6 +1,8 @@
 Byeol::Application.routes.draw do
 
-  root 'controller#static_pages'
+  root to: "root_pages#home"
+  get "/help", to: "root_pages#help"
+  get "/about", to: "root_pages#about"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
