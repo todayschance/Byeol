@@ -8,6 +8,7 @@ gem 'coffee-rails', '4.0.1'
 gem 'haml'
 gem 'jquery-rails', '3.0.4'
 gem 'turbolinks', '1.1.1'
+gem 'unicorn'
 gem 'jbuilder', '1.0.2'
 
 group :development, :test do
