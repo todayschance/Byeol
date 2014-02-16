@@ -8,6 +8,14 @@ module ApplicationHelper
 		else
 			"#{page_title} | #{base_title}"
 		end
-		
 	end
+
+	# Returns "active" when it's current page.
+	def link_to_active(name, options={}, html_options={}, &block)
+
+		html_options[:class] = html_options[:class].to_s + " active" if current_page?(options.to_s)
+
+		link_to name, options, html_options, &block
+	end
+
 end
