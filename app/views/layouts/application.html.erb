@@ -7,30 +7,41 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"content="width=device-width,initial-scale=1">
 
-  <!-- Bootstrap CDN -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 <body>
-  <header class="root header">
-    
-  </header>
 
-  <div class="container">
-    <%= yield %>
+<header class="page ui grid" id="rootHeader">
+  <div class="column">
+    <div class="secondary ui menu">
+      <%= link_to "별바다", root_path, class: "header item" %>
+      <%= link_to "책", "#", class: "item" %>
+      <%= link_to "서평", "#", class: "item" %>
+      <%= link_to "감상", "#", class: "item" %>
+      <%= link_to "자유", "#", class: "item" %>
+      <div class="right menu">
+        <%= link_to_active "가입하기", signup_path, class: "item" %>
+      </div>
+    </div>
   </div>
+</header>
 
-  <footer class="root footer">
-    
-  </footer>
+<%= yield %>
 
-<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-	console.log("This site has been being developed by Compiztab (compiztab.github.io)")
-	console.log("빅뱅이론 재밌네요.")
-</script>
+<footer class="ui page grid">
+  <div class="column">
+    <%= link_to "이 사이트에 대해", "#" %>
+    <%= link_to "도움!", "#" %>
+  </div>
+</footer>
+
+
+<!-- Scripts -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
 </body>
 </html>
