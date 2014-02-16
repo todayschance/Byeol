@@ -1,11 +1,13 @@
 Byeol::Application.routes.draw do
 
-  get "users/new"
   root to: "root_pages#home"
   get "/help", to: "root_pages#help"
   get "/about", to: "root_pages#about"
   get "/signup", to: "users#new"
   get "/admin", to: "admin#index"
+
+  # Users
+  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

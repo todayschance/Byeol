@@ -1,0 +1,13 @@
+-provide :title, @user.name
+%h1.ui.top.attached.segment.colored.blue.inverted
+	= gravatar_for @user, "ui avatar circular image"
+	= @user.name
+
+.ui.attached.segment
+	.ui.two.column.divided.grid
+		.column.five.wide
+			one
+		.column.eleven.wide
+			two
+.ui.bottom.attached.segment
+	%p orb!

@@ -1,55 +1,48 @@
 - provide :title, "가입하기"
-.ui.page.grid
-	.column
-		%h1 가입하기
-		.ui.form.segment
-
-			.ui.two.column.divided.grid
-				.column
-					.field
-						%label{for: "email"} 이메일
-						.ui.left.labeled.icon.input
-							%input#email{placeholder: "Email", type: "text"}/
-							%i.mail.icon
-							.ui.corner.label
-								%i.icon.asterisk
-				.column.def.info
-					이메일은 로그인 할 때, 열쇠글을 잊어버렸을 때 씁니다.
-
-			.ui.two.column.divided.grid
-				.column
-					.field
-						%label{for: "name"} 이름
-						.ui.left.labeled.icon.input
-							%input#name{placeholder: "Name", type: "text"}/
-							%i.user.icon
-							.ui.corner.label
-								%i.icon.asterisk
-				.column.def.info
-					이름은 다른 사용자가 나를 부를 때 씁니다. 최대 10자까지 쓸 수 있습니다.
-					
-			.ui.two.column.divided.grid
-				.column
-					.field
-						%label{for: "password"} 열쇠글
-						.ui.left.labeled.icon.input
-							%input#password{placeholder: "Password", type: "password"}/
-							%i.lock.icon
-							.ui.corner.label
-								%i.icon.asterisk
-				.column.def.info
-					6자리 이상의 숫자, 영문자, 특수문자 조합입니다.
-
-			.ui.two.column.divided.grid
-				.column
-					.field
-						%label{for: "confirm"} 열쇠글 확인
-						.ui.left.labeled.icon.input
-							%input#confirm{placeholder: "Confirm", type: "password"}/
-							%i.icon
-							.ui.corner.label
-								%i.icon.asterisk
-				.column.def.info
-					열쇠글을 잘못 적지 않았나 확인하기 위해 다시 한번 적어주세요.
-
-			%button.ui.blue.button 가입하기
+%h1 가입하기
+= form_for @user, :html => {:class=>"ui form segment"} do |f|
+	.ui.two.column.divided.grid
+		.column
+			.field
+				= f.label :name, "이름"
+				.ui.left.labeled.icon.input
+					= f.text_field :name
+					%i.user.icon
+					.ui.corner.label
+						%i.icon.asterisk
+		.column.def.info
+			이름은 다른 사용자가 나를 부를 때 씁니다. 최대 10자까지 쓸 수 있습니다.
+	.ui.two.column.divided.grid
+		.column
+			.field
+				= f.label :email, "이메일"
+				.ui.left.labeled.icon.input
+					= f.text_field :email
+					%i.mail.icon
+					.ui.corner.label
+						%i.icon.asterisk
+		.column.def.info
+			이메일은 로그인 할 때, 열쇠글을 잊어버렸을 때 씁니다.
+	.ui.two.column.divided.grid
+		.column
+			.field
+				= f.label :password, "열쇠글"
+				.ui.left.labeled.icon.input
+					= f.text_field :password
+					%i.lock.icon
+					.ui.corner.label
+						%i.icon.asterisk
+		.column.def.info
+			6자리 이상이여야 합니다.
+	.ui.two.column.divided.grid
+		.column
+			.field
+				= f.label :password_confirmation, "열쇠글 확인"
+				.ui.left.labeled.icon.input
+					= f.text_field :password_confirmation
+					%i.repeat.icon
+					.ui.corner.label
+						%i.icon.asterisk
+		.column.def.info
+			다시 한 번 적어주세요.
+	=f.submit "가입하기", :class=>"ui blue button"
