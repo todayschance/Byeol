@@ -1,12 +1,12 @@
-- provide :title, "가입하기"
-%h1 가입하기
-= form_for @user, :html => {:class=>"ui form segment"} do |f|
+-provide :title, "가입하기"
+%h1.def.font.white 가입하기
+=form_for @user, :html => {class: "ui form segment"} do |f|
 	.ui.two.column.divided.grid
 		.column
 			.field
 				= f.label :name, "이름"
 				.ui.left.labeled.icon.input
-					= f.text_field :name
+					= f.text_field :name, placeholder: "Name", autofocus: true
 					%i.user.icon
 					.ui.corner.label
 						%i.icon.asterisk
@@ -17,7 +17,7 @@
 			.field
 				= f.label :email, "이메일"
 				.ui.left.labeled.icon.input
-					= f.text_field :email
+					= f.text_field :email, placeholder: "Email"
 					%i.mail.icon
 					.ui.corner.label
 						%i.icon.asterisk
@@ -28,7 +28,7 @@
 			.field
 				= f.label :password, "열쇠글"
 				.ui.left.labeled.icon.input
-					= f.text_field :password
+					= f.text_field :password, placeholder: "Password"
 					%i.lock.icon
 					.ui.corner.label
 						%i.icon.asterisk
@@ -39,10 +39,14 @@
 			.field
 				= f.label :password_confirmation, "열쇠글 확인"
 				.ui.left.labeled.icon.input
-					= f.text_field :password_confirmation
+					= f.text_field :password_confirmation, placeholder: "Password Confirm"
 					%i.repeat.icon
 					.ui.corner.label
 						%i.icon.asterisk
 		.column.def.info
 			다시 한 번 적어주세요.
-	=f.submit "가입하기", :class=>"ui blue button"
+	=f.submit "가입하기", class: "ui blue button"
+	.ui.error.message
+		.header
+			=pluralize @user.errors.count, "개"
+			의 오류가 있습니다.
