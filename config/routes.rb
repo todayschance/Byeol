@@ -6,7 +6,7 @@ Byeol::Application.routes.draw do
   get "/admin", to: "admin#index"
   get "/signup", to: "users#new"
   get "/signin", to: "sessions#new"
-  get "/signout", to: "sessions#destroy"
+  match "/signout", to: "sessions#destroy", via: 'delete'
 
   # Users
   resources :users
