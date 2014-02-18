@@ -18,7 +18,7 @@
 
 <header class="page ui grid" id="rootHeader">
   <div class="column">
-    <div class="secondary ui menu">
+    <div class="secondary inverted ui menu">
       <%= link_to "별바다", root_path, class: "header item" %>
       <%= link_to "책", "#", class: "item" %>
       <%= link_to "서평", "#", class: "item" %>
@@ -31,7 +31,21 @@
   </div>
 </header>
 
-<%= yield %>
+<div class="page ui grid">
+  <div class="column">
+    <%= yield %>
+  </div>
+</div>
+
+<% if Rails.env.development? %>
+<div class="page ui grid">
+  <div class="column">
+    <div class="ui info message floating">
+      <%= debug(params) %>
+    </div>
+  </div>
+</div>
+<% end %>
 
 <footer class="ui page grid">
   <div class="column">
@@ -42,6 +56,5 @@
 
 
 <!-- Scripts -->
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
 </body>
 </html>
