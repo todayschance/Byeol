@@ -1,6 +1,8 @@
 -provide :title, "가입하기"
-%h1.def.font.white 가입하기
-=form_for @user, :html => {class: "ui form segment"} do |f|
+%h1.ui.attached.message 
+	.header 가입하기
+	%p 동성고 재학생만 받고 있심다.
+=form_for @user, :html => {class: "ui form fluid bottom attached segment"} do |f|
 	.ui.two.column.divided.grid
 		.column
 			.field
@@ -22,13 +24,15 @@
 					.ui.corner.label
 						%i.icon.asterisk
 		.column.def.info
-			이메일은 로그인 할 때, 열쇠글을 잊어버렸을 때 씁니다.
+			이메일은 로그인 할 때, 열쇠글을 잊어버렸을 때, 
+			%a{href:"http://gravatar.com"} Gravatar 
+			이미지를 가져오는 데에 쓰입니다.
 	.ui.two.column.divided.grid
 		.column
 			.field
 				= f.label :password, "열쇠글"
 				.ui.left.labeled.icon.input
-					= f.text_field :password, placeholder: "Password"
+					= f.text_field :password, placeholder: "Password", type: "password"
 					%i.lock.icon
 					.ui.corner.label
 						%i.icon.asterisk
@@ -39,14 +43,11 @@
 			.field
 				= f.label :password_confirmation, "열쇠글 확인"
 				.ui.left.labeled.icon.input
-					= f.text_field :password_confirmation, placeholder: "Password Confirm"
+					= f.text_field :password_confirmation, placeholder: "Password Confirm", type: "password"
 					%i.repeat.icon
 					.ui.corner.label
 						%i.icon.asterisk
 		.column.def.info
 			다시 한 번 적어주세요.
 	=f.submit "가입하기", class: "ui blue button"
-	.ui.error.message
-		.header
-			=pluralize @user.errors.count, "개"
-			의 오류가 있습니다.
+	=render "shared/error_messages"
