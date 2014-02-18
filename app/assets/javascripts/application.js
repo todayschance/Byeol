@@ -17,7 +17,7 @@
 //= require_tree .
 
 $(document).ready(function() {
-	acart();
+
 	$('.message > .close').on('click', function() {
 	  $(this).closest('.message').fadeOut();
 	});

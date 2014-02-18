@@ -3,11 +3,14 @@ Byeol::Application.routes.draw do
   root to: "root_pages#home"
   get "/help", to: "root_pages#help"
   get "/about", to: "root_pages#about"
-  get "/signup", to: "users#new"
   get "/admin", to: "admin#index"
+  get "/signup", to: "users#new"
+  get "/signin", to: "sessions#new"
+  match "/signout", to: "sessions#destroy", via: 'delete'
 
   # Users
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
