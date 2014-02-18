@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"content="width=device-width,initial-scale=1">
 
+  <!-- Pure base css -->
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/base-min.css">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -16,9 +18,9 @@
 </head>
 <body>
 
-<header class="page ui grid" id="rootHeader">
+<div class="page ui grid" id="rootHeader">
   <div class="column">
-    <div class="secondary inverted ui menu">
+    <header class="secondary inverted ui menu">
       <%= link_to "별바다", root_path, class: "header item" %>
       <%= link_to "책", "#", class: "item" %>
       <%= link_to "서평", "#", class: "item" %>
@@ -27,28 +29,37 @@
       <div class="right menu">
         <%= link_to_active "가입하기", signup_path, class: "item" %>
       </div>
-    </div>
-  </div>
-</header>
-
-<div class="page ui grid">
-  <div class="column">
-    <%= yield %>
+    </header>
+    <% flash.each do |key, value| %>
+      <aside class="ui success message alert-<%= key %>">
+        <i class="close icon"></i>
+        <header class="header">
+          <%= value %>
+        </header>
+      </aside>
+    <% end %>
   </div>
 </div>
 
+
+<main class="page ui grid">
+  <div class="column">
+    <%= yield %>
+  </div>
+</main>
+
 <% if Rails.env.development? %>
-<div class="page ui grid">
+<aside class="page ui grid">
   <div class="column">
     <div class="ui info message floating">
       <%= debug(params) %>
     </div>
   </div>
-</div>
+</aside>
 <% end %>
 
 <footer class="ui page grid">
-  <div class="column">
+  <div class="column def font white">
     <%= link_to "이 사이트에 대해", "#" %>
     <%= link_to "도움!", "#" %>
   </div>

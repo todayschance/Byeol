@@ -7,4 +7,7 @@ module UsersHelper
 										 class: class_options
 	end
 
+	def icon_for icon
+		tag :i, class: "ui icon #{icon}"
+	end
 end
