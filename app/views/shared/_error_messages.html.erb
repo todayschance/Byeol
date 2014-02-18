@@ -1,0 +1,10 @@
+<% if @user.errors.any? %>
+	<aside class="ui error message">
+		<header class="header">
+			<%= pluralize @user.errors.count, "errors" %>
+		</header>
+		<% @user.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	</aside>
+<% end %>

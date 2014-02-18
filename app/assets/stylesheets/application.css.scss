@@ -11,3 +11,21 @@
  *= require_self
  *= require_tree .
  */
+@import "semantic-ui";
+
+body {
+	background-color: rgb(30,33,35);
+}
+
+#rootHeader {
+
+}
+
+.def.info {
+	vertical-align: middle !important;
+	font-size: .875rem !important;
+}
+
+.def.font.white {
+	color: rgb(235, 233, 240);
+}

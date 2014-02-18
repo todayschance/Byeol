@@ -10,9 +10,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      UserMailer.welcome_email(@user).deliver
+      flash[:success] = "축하드립니다! 별바다에 가입하셨습니다!"
       redirect_to @user
     else
-      render 'new'
+      render action: 'new'
     end
   end
 

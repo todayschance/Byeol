@@ -12,6 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require semantic-ui
 //= require turbolinks
 //= require_tree .
-//= require semantic-ui
+
+$(document).ready(function() {
+	acart();
+	$('.message > .close').on('click', function() {
+	  $(this).closest('.message').fadeOut();
+	});
+});
