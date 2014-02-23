@@ -17,8 +17,17 @@
 //= require_tree .
 
 $(document).ready(function() {
+	readySemantic();
+});
 
-	$('.message > .close').on('click', function() {
+var readySemantic = function() {
+
+	$messageClose = $('.message > .close');
+	$rootSidebar = $('#rootSidebar');
+
+	$($messageClose).on('click', function() {
 	  $(this).closest('.message').fadeOut();
 	});
-});
+
+	$($rootSidebar).sidebar('attach events', '.launch');
+}

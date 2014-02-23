@@ -1,4 +1,6 @@
 -provide :title, @user.name
+-provide :short_title, '사용자 정보'
+
 %h1.ui.top.attached.segment.colored.blue.inverted
 	= gravatar_for @user, "ui avatar circular image"
 	= @user.name
