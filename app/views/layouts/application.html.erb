@@ -3,14 +3,9 @@
 <head>
   <title><%= full_title(yield(:title)) %></title>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport"content="width=device-width,initial-scale=1,maximum-scale=1.0"/>
-
-  <!-- Pure base css -->
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/base-min.css">
-  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.12.0/css/semantic.min.css">
-  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.12.0/javascript/semantic.min.js"></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -20,38 +15,16 @@
 </head>
 <body>
 
-<div class="page ui grid" id="rootHeader">
-  <div class="column">
-    <header class="secondary inverted ui menu">
-      <%= link_to "별바다", root_path, class: "header item" %>
-      <%= link_to "책", "#", class: "item" %>
-      <%= link_to "서평", "#", class: "item" %>
-      <%= link_to "감상", "#", class: "item" %>
-      <%= link_to "자유", "#", class: "item" %>
-      <div class="right menu">
-        <%= link_to_active "가입하기", signup_path, class: "item" %>
-      </div>
-    </header>
-    <% flash.each do |key, value| %>
-      <aside class="ui success message alert-<%= key %>">
-        <i class="close icon"></i>
-        <header class="header">
-          <%= value %>
-        </header>
-      </aside>
-    <% end %>
-  </div>
+<%= render "layouts/sidebar" %>
+
+<%= render "layouts/menu" %>
+
+<div id="yield">
+  <%= yield %>
 </div>
 
-
-<main class="page ui grid">
-  <div class="column">
-    <%= yield %>
-  </div>
-</main>
-
 <% if Rails.env.development? %>
-<aside class="page ui grid">
+<aside class="page ui grid" id="debug">
   <div class="column">
     <div class="ui info message floating">
       <%= debug(params) %>
@@ -61,10 +34,8 @@
 <% end %>
 
 <footer class="ui page grid">
-  <div class="column def font white">
-    <%= link_to "이 사이트에 대해", "#" %>
-    <%= link_to "도움!", "#" %>
-  </div>
+  <%= link_to "이 사이트에 대해", "#" %>
+  <%= link_to "도움!", "#" %>
 </footer>
 
 

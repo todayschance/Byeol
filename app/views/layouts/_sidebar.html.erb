@@ -1,0 +1,25 @@
+<nav class="ui floating styled sidebar" id="rootSidebar">
+
+<div class="ui fluid vertical icon labeled menu">
+	<a class="launch item">
+		<i class="close icon"></i>메뉴 닫기
+	</a>
+
+	<a class="item">
+		<i class="circular edit icon"></i>서평 쓰기
+	</a>
+</div>
+
+<div class="ui fluid vertical menu">
+	<%= active_iconic_link_to "홈", "home", root_path, class: "item" %>
+	<%= active_iconic_link_to "책", "book", help_path, class: "item" %>
+	<%= active_iconic_link_to "서평", "file", help_path, class: "item" %>
+	<%= active_iconic_link_to "감상", "chat", help_path, class: "item" %>
+	<%= active_iconic_link_to "자유", "cloud", help_path, class: "item" %>
+</div>
+
+<div class="ui fluid vertical icon labeled menu">
+	<%= active_iconic_link_to "도움", "help", help_path, class: "item" %>
+	<%= active_iconic_link_to "별바다에 대해서", "info", about_path, class: "item" %>
+</div>
+</nav>

@@ -3,7 +3,6 @@ Byeol::Application.routes.draw do
   root to: "root_pages#home"
   get "/help", to: "root_pages#help"
   get "/about", to: "root_pages#about"
-  get "/admin", to: "admin#index"
   get "/signup", to: "users#new"
   get "/signin", to: "sessions#new"
   match "/signout", to: "sessions#destroy", via: 'delete'

@@ -1,0 +1,38 @@
+<% provide :title, "가입하기" %>
+<% provide :short_title, "회원가입" %>
+
+<div class="ui page grid">
+<div class="column">
+<header class="ui attached message">
+<h1>가입하기</h1>
+</header>
+
+<%= form_for @user, html: {class: "ui form fluid attached segment"} do |f| %>
+	<%= render "shared/error_messages" %>
+
+<div class="field">
+	<%= f.label :name, "이름" %>
+	<%= f.text_field :name, placeholder: "홍 길동" %>
+</div>
+
+<div class="field">
+	<%= f.label :email, "이메일" %>
+	<%= f.text_field :email, type:"email", placeholder: "kimchi@naver.com" %>
+	<small>이메일은 로그인 할 때 사용됩니다.</small>
+</div>
+
+<div class="field">
+	<%= f.label :password, "열쇠글" %>
+	<%= f.text_field :password, type:"password", placeholder:"• • • • • • •"%>
+	<small>6자리 이상이여야 합니다.</small>
+</div>
+
+<div class="field">
+	<%= f.label :password_confirmation, "열쇠글 확인" %>
+	<%= f.text_field :password_confirmation, type:"password", placeholder: "• • • • • • •" %>
+</div>
+
+	<%= f.submit "계정 만들기", class: "ui submit blue button" %>
+
+<% end %>
+</div></div>

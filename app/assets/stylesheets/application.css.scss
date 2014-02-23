@@ -9,26 +9,31 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require normalize-rails
  *= require_tree .
  */
-// @import "semantic-ui";
+@import "semantic-ui";
+@import "bootstrap";
 
 body {
-	background-color: rgb(30,33,35);
+	overflow-x: hidden;
+	height: 3000px;
+	min-width: 320px;
 }
 
-#rootHeader {
-
+// layouts
+#rootMenu {
+	// box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.875) !important;
+	opacity: 0.875;
 }
 
-.def.aligin.center {
-	text-align: center;
+#yield {
+	padding-top: 43px;
 }
 
-.def.font.info {
-	font-size: .875rem !important;
+// Developements
+#debug {
+	word-wrap: break-word;
 }
 
-.def.font.white {
-	color: rgb(235, 233, 240);
-}
+
