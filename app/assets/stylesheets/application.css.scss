@@ -12,12 +12,11 @@
  *= require normalize-rails
  *= require_tree .
  */
-@import "semantic-ui";
 @import "bootstrap";
+@import "semantic-ui";
 
 body {
 	overflow-x: hidden;
-	height: 3000px;
 	min-width: 320px;
 }
 
