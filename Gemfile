@@ -10,7 +10,7 @@ gem 'jquery-rails', '3.0.4'
 gem 'turbolinks', '1.1.1'
 gem 'unicorn'
 gem 'normalize-rails'
-gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+# gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'bcrypt-ruby'
 gem 'jbuilder', '1.0.2'
 

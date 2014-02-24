@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require semantic-ui
 //= require turbolinks
 //= require_tree .
 
@@ -26,7 +25,7 @@ var readySemantic = function() {
 	$rootSidebar = $('#rootSidebar');
 
 	$($messageClose).on('click', function() {
-	  $(this).closest('.message').fadeOut();
+	  $(this).closest('.close_for_message').fadeOut();
 	});
 
 	$($rootSidebar).sidebar('attach events', '.launch');
