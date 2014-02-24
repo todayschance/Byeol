@@ -1,9 +1,21 @@
 <!DOCTYPE html>
+
+<!-- ............................................. -->
+<!-- ... Using Liquid Gem v 1.0 by Chris Biron ... -->
+<!-- ........ It was modified by Compiztab ....... -->
+<!--      Liquid Gem and This Site's front-end 
+           is licensed under Creative Commons
+          Attribution-NonCommercial-ShareAlike
+           저작권자표기 - 비상업적이용 - 동일조건변경허락
+                3.0 Unported License -->
+<!-- ............................................. -->
+
 <html lang="ko">
 <head>
   <title><%= full_title(yield(:title)) %></title>
 
   <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <%= csrf_meta_tags %>
@@ -12,9 +24,11 @@
   <![endif]-->
   <!-- semantic-ui cms -->
   <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.12.0/css/semantic.min.css">
-  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.12.0/javascript/semantic.min.js"></script>
+
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.12.0/javascript/semantic.min.js"></script>
 </head>
 <body>
 
