@@ -1,20 +1,21 @@
 module ApplicationHelper
 
 	# Returns the full title of head of html.
-	def full_title page_title
+	def html_title title
 		base_title = "별바다"
-		if page_title.empty?
+		if title.empty?
 			"#{base_title}: 커뮤니티"
 		else
-			"#{page_title} | #{base_title}"
+			"#{title} | #{base_title}"
 		end
 	end
 
-	def short_title page_short_title
-		if !page_short_title.empty?
-			page_short_title.to_s
+	# Returns title or uplink for mobile nav
+	def nav_title title
+		if title.empty?
+			return
 		else
-			"별바다"
+			content_tag :div, title, class: "item"
 		end
 	end
 
@@ -27,7 +28,11 @@ module ApplicationHelper
 	end
 
 	def active_iconic_link_to(name, icon, options={}, html_options={}, &block)
-		icon_tag = "<i class=\"#{icon} icon\"></i>" + name
-		active_link_to icon_tag.html_safe, options, html_options, &block
+		out_tag = icon_tag(icon) + name
+		active_link_to out_tag.html_safe, options, html_options, &block
+	end
+
+	def icon_tag icon
+		"<i class=\"#{icon} icon\"></i>" if !icon.empty?
 	end
 end

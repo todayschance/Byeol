@@ -1,10 +1,3 @@
-GIT
-  remote: git://github.com/doabit/semantic-ui-sass.git
-  revision: c5c14eaeafb395dd2d8ed2f9a8bc92f2416d3e31
-  specs:
-    semantic-ui-sass (0.13.0.0)
-      sass (~> 3.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -80,7 +73,6 @@ GEM
     multi_json (1.8.4)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
-    normalize-rails (3.0)
     pg (0.15.1)
     polyglot (0.3.3)
     rack (1.5.2)
@@ -175,7 +167,6 @@ DEPENDENCIES
   haml-rails
   jbuilder (= 1.0.2)
   jquery-rails (= 3.0.4)
-  normalize-rails
   pg (= 0.15.1)
   rails (= 4.0.2)
   rails_12factor (= 0.0.2)
@@ -183,7 +174,6 @@ DEPENDENCIES
   sass-rails (= 4.0.1)
   sdoc (= 0.3.20)
   selenium-webdriver (= 2.35.1)
-  semantic-ui-sass!
   sqlite3 (= 1.3.8)
   turbolinks (= 1.1.1)
   uglifier (= 2.1.1)

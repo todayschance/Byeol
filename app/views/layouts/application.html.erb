@@ -1,44 +1,108 @@
 <!DOCTYPE html>
+
+<!-- ............................................. -->
+<!-- ... Using Liquid Gem v 1.0 by Chris Biron ... -->
+<!-- ........ It was modified by Compiztab ....... -->
+<!--      Liquid Gem and this site's front-end 
+           is licensed under Creative Commons
+          Attribution-NonCommercial-ShareAlike
+           저작권자표기 - 비상업적이용 - 동일조건변경허락
+                3.0 Unported License -->
+<!-- ............................................. -->
+<!-- ............................................. -->
+<!-- ............See also /about page............. -->
+<!-- ............................................. -->
+
 <html lang="ko">
 <head>
-  <title><%= full_title(yield(:title)) %></title>
+  <title><%= html_title(yield(:html_title)) %></title>
 
   <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.4.2/grids-min.css">
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.12.0/css/semantic.min.css">
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.12.0/javascript/semantic.min.js"></script>
+  <!-- Needed script&link -->
+
 </head>
 <body>
 
-<%= render "layouts/sidebar" %>
+<!-- Only for mobile -->
+<nav class="ui fixed menu for mobile" id="nav_for_mobile">
+  <a class="launch item"><i class="list layout icon"></i>Content</a>
+  <%= nav_title yield(:nav_title) %>
+  <div class="right menu">
+    <div class="ui pointing dropdown link item">
+    <i class="user icon"></i>
+      <div class="menu">
+        <%= link_to "로그인하기", signin_path, class: "item" %>
+        <%= link_to "가입하기", signup_path, class: "item" %>
+      </div>
+    </div>
+  </div>
+</nav>
 
-<%= render "layouts/menu" %>
+<%= render 'layouts/sidebar' %>
+
+<div class="wide wrapper">
+  <div id="root_top">
+    <div id="root_logo">
+      <%= image_tag "logo.png", alt: "Logo Image" %>
+      <h1><%= link_to "별바다", root_path %></h1>
+    </div>
+
+
+    <!-- Only for desktop -->
+    <nav class="ui secondary menu for desktop" id="nav_for_desktop">
+    <div class="right menu">
+      <%= active_link_to "홈", root_path, class: "item" %>
+      <%= active_link_to "책", "/books", class: "item" %>
+      <%= active_link_to "서평", "/reviews", class: "item" %>
+      <%= active_link_to "감상", "/feelings", class: "item" %>
+      <%= active_link_to "자유", "/free", class: "item" %>
+    </div>
+    </nav>
+  </div><!-- /top -->
+
+
+  <div class="ui section divider" id="root_divider"></div>
+
+  <header>
+    <h1>이 사이트는 아직 개발중입니다.</h1>
+  </header>
+
+  <noscript>
+    JavaScript를 쓰지 못하면 정상적인 이용이 불가능합니다!
+  </noscript>
+
+  <%= render "layouts/flash" %>
+
+</div><!-- /wrapper -->
 
 <div id="yield">
   <%= yield %>
 </div>
 
-<% if Rails.env.development? %>
-<aside class="page ui grid" id="debug">
-  <div class="column">
-    <div class="ui info message floating">
-      <%= debug(params) %>
+<%= render "layouts/debug" %>  
+
+<footer id="root_footer">
+  <div class="wide wrapper">
+    <div></div>
+    <div class="ui inverted text menu">
+      <%= active_link_to "이 사이트에 대해", about_path, class: "item" %>
+      <%= active_link_to "도움!", help_path, class: "item" %>
     </div>
   </div>
-</aside>
-<% end %>
-
-<footer class="ui page grid">
-  <%= link_to "이 사이트에 대해", "#" %>
-  <%= link_to "도움!", "#" %>
 </footer>
-
-
-<!-- Scripts -->
 </body>
 </html>

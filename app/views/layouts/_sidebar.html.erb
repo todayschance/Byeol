@@ -1,4 +1,4 @@
-<nav class="ui floating styled sidebar" id="rootSidebar">
+<nav class="ui floating styled sidebar" id="root_sidebar">
 
 <div class="ui fluid vertical icon labeled menu">
 	<a class="launch item">
@@ -12,14 +12,9 @@
 
 <div class="ui fluid vertical menu">
 	<%= active_iconic_link_to "홈", "home", root_path, class: "item" %>
-	<%= active_iconic_link_to "책", "book", help_path, class: "item" %>
-	<%= active_iconic_link_to "서평", "file", help_path, class: "item" %>
-	<%= active_iconic_link_to "감상", "chat", help_path, class: "item" %>
-	<%= active_iconic_link_to "자유", "cloud", help_path, class: "item" %>
-</div>
-
-<div class="ui fluid vertical icon labeled menu">
-	<%= active_iconic_link_to "도움", "help", help_path, class: "item" %>
-	<%= active_iconic_link_to "별바다에 대해서", "info", about_path, class: "item" %>
+	<%= active_iconic_link_to "책", "book", "/books", class: "item" %>
+	<%= active_iconic_link_to "서평", "file", "/reviews", class: "item" %>
+	<%= active_iconic_link_to "감상", "chat", "/feelings", class: "item" %>
+	<%= active_iconic_link_to "자유", "cloud", "/frees", class: "item" %>
 </div>
 </nav>

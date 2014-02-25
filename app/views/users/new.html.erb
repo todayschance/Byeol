@@ -12,24 +12,24 @@
 
 <div class="field">
 	<%= f.label :name, "이름" %>
-	<%= f.text_field :name, placeholder: "홍 길동" %>
+	<%= f.text_field :name, placeholder: "홍길동" %>
 </div>
 
 <div class="field">
 	<%= f.label :email, "이메일" %>
-	<%= f.text_field :email, type:"email", placeholder: "kimchi@naver.com" %>
+	<%= f.text_field :email, type:"email", placeholder: "example@example.com" %>
 	<small>이메일은 로그인 할 때 사용됩니다.</small>
 </div>
 
 <div class="field">
 	<%= f.label :password, "열쇠글" %>
-	<%= f.text_field :password, type:"password", placeholder:"• • • • • • •"%>
+	<%= f.password_field :password, placeholder:"• • • • • •"%>
 	<small>6자리 이상이여야 합니다.</small>
 </div>
 
 <div class="field">
 	<%= f.label :password_confirmation, "열쇠글 확인" %>
-	<%= f.text_field :password_confirmation, type:"password", placeholder: "• • • • • • •" %>
+	<%= f.password_field :password_confirmation, placeholder: "• • • • • •" %>
 </div>
 
 	<%= f.submit "계정 만들기", class: "ui submit blue button" %>
