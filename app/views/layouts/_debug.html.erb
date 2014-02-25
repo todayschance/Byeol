@@ -1,0 +1,7 @@
+<% if Rails.env.development? %>
+<aside class="wide wrapper">
+	<div class="ui info message floating">
+	  <%= debug(params) %>
+	</div>
+</aside>
+<% end %>
