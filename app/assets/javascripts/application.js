@@ -16,17 +16,31 @@
 //= require_tree .
 
 $(document).ready(function() {
+
+	// Fixed Nav
+	$fixed_nav = $('#nav_for_mobile');
+	$(window).scroll(function() {
+			var sclTop = $(this).scrollTop();
+			if (sclTop >= 20)
+				$($fixed_nav).addClass('inverted')
+			else 
+				$($fixed_nav).removeClass('inverted')
+	});
+
 	readySemantic();
 });
 
 var readySemantic = function() {
 
 	$messageClose = $('.message > .close');
-	$rootSidebar = $('#rootSidebar');
+	$rootSidebar = $('#root_sidebar');
 
 	$($messageClose).on('click', function() {
-	  $(this).closest('.close_for_message').fadeOut();
+		$(this).closest('.close_for_message').fadeOut();
 	});
 
 	$($rootSidebar).sidebar('attach events', '.launch');
+
+	// dropdowns
+	$('.ui.dropdown').dropdown();
 }
