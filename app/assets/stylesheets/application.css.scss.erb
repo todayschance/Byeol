@@ -16,11 +16,10 @@
 @import "_settings";
 
 body {
-	background-image: url("/assets/backgroundtexture.png");
+	background-image: url(<%= asset_url "backgroundtexture.png" %>);
 	background-color:  #f9f9f9;
 	overflow-x: hidden;
 	font-family: $font-body;
-	height: 3000px;
 }
 
 a { text-decoration: none; }
