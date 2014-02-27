@@ -1,13 +1,14 @@
-<nav class="ui floating styled sidebar" id="root_sidebar">
+<nav class="ui styled sidebar" id="root_sidebar">
 
 <div class="ui fluid vertical icon labeled menu">
 	<a class="launch item">
 		<i class="close icon"></i>메뉴 닫기
 	</a>
-
+<% if signed_in? %>
 	<a class="item">
 		<i class="circular edit icon"></i>서평 쓰기
 	</a>
+<% end %>
 </div>
 
 <div class="ui fluid vertical menu">

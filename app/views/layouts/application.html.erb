@@ -42,7 +42,7 @@
   <a class="launch item"><i class="list layout icon"></i>Content</a>
   <%= nav_title yield(:nav_title) %>
   <div class="right menu">
-    <% render 'layouts/user_dropmenu' %>
+    <%= render 'layouts/user_dropmenu' %>
   </div>
 </nav>
 
@@ -64,7 +64,7 @@
       <%= active_link_to "서평", "/reviews", class: "item" %>
       <%= active_link_to "감상", "/feelings", class: "item" %>
       <%= active_link_to "자유", "/free", class: "item" %>
-      <% render 'layouts/user_dropmenu' %>
+      <%= render 'layouts/user_dropmenu' %>
     </div>
     </nav>
   </div><!-- /top -->
