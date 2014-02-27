@@ -25,10 +25,6 @@ $(document).ready(function() {
 				$($fixed_nav).addClass('inverted')
 			else 
 				$($fixed_nav).removeClass('inverted')
-			if (sclTop >= 4)
-				$($fixed_nav).css('top', '0rem')
-			else 
-				$($fixed_nav).css('top', '-1.4rem')
 	});
 
 	readySemantic();
