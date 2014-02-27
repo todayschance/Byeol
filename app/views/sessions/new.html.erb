@@ -1,8 +1,7 @@
 <% provide :title, "로그인" %>
 <% provide :short_title, "로그인" %>
-<div class="ui page grid">
-<div class="column">
-	<header class="ui attached message">
+<div class="inner wrapper">
+	<header class="ui attached message mobile_center">
 		<h1>로그인</h1>
 	</header>
 
@@ -22,8 +21,7 @@
 	<%= f.submit "들어가기", class: "ui blue submit button" %>
 	<% end %>
 
-	<aside class="ui bottom attached message">
+	<aside class="ui bottom attached message mobile_center">
 		<%= link_to "새로 가입하고 싶나요?", signup_path %>
 	</aside>
-</div>
 </div>

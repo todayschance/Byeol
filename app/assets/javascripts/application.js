@@ -21,10 +21,14 @@ $(document).ready(function() {
 	$fixed_nav = $('#nav_for_mobile');
 	$(window).scroll(function() {
 			var sclTop = $(this).scrollTop();
-			if (sclTop >= 20)
+			if (sclTop > 26)
 				$($fixed_nav).addClass('inverted')
 			else 
 				$($fixed_nav).removeClass('inverted')
+			if (sclTop >= 4)
+				$($fixed_nav).css('top', '0rem')
+			else 
+				$($fixed_nav).css('top', '-1.4rem')
 	});
 
 	readySemantic();
@@ -36,7 +40,7 @@ var readySemantic = function() {
 	$rootSidebar = $('#root_sidebar');
 
 	$($messageClose).on('click', function() {
-		$(this).closest('.close_for_message').fadeOut();
+		$(this).closest('#flash_message').fadeOut();
 	});
 
 	$($rootSidebar).sidebar('attach events', '.launch');

@@ -1,38 +1,59 @@
 <% provide :title, "가입하기" %>
 <% provide :short_title, "회원가입" %>
 
-<div class="ui page grid">
-<div class="column">
-<header class="ui attached message">
+<div class="inner wrapper">
+<header class="ui attached message mobile_text_center">
 <h1>가입하기</h1>
 </header>
 
-<%= form_for @user, html: {class: "ui form fluid attached segment"} do |f| %>
-	<%= render "shared/error_messages" %>
+<%= form_for @user, html: {class: "ui form fluid attached segment", id: "signup"} do |f| %>
+
+<% if @user.errors.any? %>
+	<aside class="ui error message">
+		<header class="header">
+			<%= pluralize @user.errors.count, "errors" %>
+		</header>
+		<% @user.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	</aside>
+<% end %>
 
 <div class="field">
 	<%= f.label :name, "이름" %>
 	<%= f.text_field :name, placeholder: "홍길동" %>
+	<div></div>
 </div>
 
-<div class="field">
-	<%= f.label :email, "이메일" %>
-	<%= f.text_field :email, type:"email", placeholder: "example@example.com" %>
-	<small>이메일은 로그인 할 때 사용됩니다.</small>
+<div class="grid-r">
+	<div class="field grid-1-2">
+		<%= f.label :email, "이메일" %>
+		<%= f.text_field :email, type:"email", placeholder: "example@example.com" %>
+	</div>
+	<div class="mobile_text_right grid-1-2">
+		<small>이메일은 로그인 할 때 사용됩니다.</small>
+	</div>
 </div>
 
-<div class="field">
-	<%= f.label :password, "열쇠글" %>
-	<%= f.password_field :password, placeholder:"• • • • • •"%>
-	<small>6자리 이상이여야 합니다.</small>
+<div class="grid-r">
+	<div class="field grid-1-2">
+		<%= f.label :password, "열쇠글" %>
+		<%= f.password_field :password, placeholder:"• • • • • •"%>
+	</div>
+	<div class="mobile_text_right grid-1-2">
+		<small>6자리 이상이여야 합니다.</small>
+	</div>
 </div>
+
 
 <div class="field">
 	<%= f.label :password_confirmation, "열쇠글 확인" %>
 	<%= f.password_field :password_confirmation, placeholder: "• • • • • •" %>
+	<div></div>
 </div>
 
+<div class="mobile_text_center">
 	<%= f.submit "계정 만들기", class: "ui submit blue button" %>
-
+</div>
 <% end %>
-</div></div>
+</div>

@@ -1,6 +1,11 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.ui.error.message {
-	display: block !important;
+.mobile_text_right {
+	vertical-align: middle;
+}
+
+#signup {
+	.grid-r > .field { margin-bottom: 0; }
+	.grid-r { margin-bottom: 1rem; }
 }
