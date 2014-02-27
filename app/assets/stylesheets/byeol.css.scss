@@ -5,7 +5,7 @@
 @import "share/_settings";
 
 body {
-	background-image: image-url("backgroundtexture.png");
+	background-image: url(image-path("backgroundtexture.png"));
 	background-color:  #f9f9f9;
 	overflow-x: hidden;
 	font-family: $font-body;
