@@ -1,0 +1,17 @@
+- provide :title, "가입하기"
+
+.inner.wrapper
+	%header.ui.attached.message.mobile_text_center
+		%h1 가입하기
+		
+	=form_for @user, html: {class: "ui form fluid attached segment"} do |f|
+		= render 'shared/error_message'
+		= field_for f, "user", "이름", :name, "text", "홍길동"
+		= described_field_for f, "mail", "이메일", :email, "email", "example@example", "이메일은 로그인 할 때 사용됩니다."
+		= described_field_for f, "lock", "열쇠글", :password, "password", "••••••", "6자리 이상이여야 합니다."
+		= field_for f, "lock", "열쇠글 확인", :password_confirmation, "password", "••••••"
+		.mobile_text_center
+			= f.submit "계정 만들기", class: "ui submit blue button"
+
+	%aside.ui.bottom.attached.message.mobile_text_center
+		=link_to "이미 계정이 있나요?", signin_path

@@ -4,7 +4,7 @@
     <%= current_user.name %>
     <div class="menu">
       <%= active_link_to "내 페이지", current_user, class: "item" %>
-      <%= active_link_to "설정", '#', class: "item" %>
+      <%= active_link_to "설정", edit_user_path(current_user), class: "item" %>
       <%= active_link_to "나가기", signout_path, method: "delete", class: "item" %>
     </div>
   <% else %>

@@ -1,0 +1,25 @@
+- provide :title, "내 정보 고치기"
+.inner.wrapper
+	%header.ui.attached.message.mobile_text_center
+		%h1 고치기
+
+	= form_for @user, html: {class: "ui form fluid attached segment"} do |f|
+		= render 'shared/error_message'
+		= field_for f, "user", "이름", :name, "text", "홍길동"
+		.grid-r
+			.disabled.field.grid-1-2
+				= f.label :email, "이메일"
+				.ui.left.icon.input
+					= icon_tag "mail"
+					= f.text_field :email, disabled: "disabled"
+			.mobile_text_right.grid-1-2
+				%small 이메일은 바꿀 수 없습니다.
+		= described_field_for f, "lock", "열쇠글", :password, "password", "••••••", "6자리 이상이여야 합니다."
+		= field_for f, "lock", "열쇠글 확인", :password_confirmation, "password", "••••••"
+		.mobile_text_center
+			= f.submit "저장하기", class: "ui submit blue button"
+
+	.ui.attached.bottom.message.every_text_center
+		= gravatar_for @user, "ui image rounded texted"
+		%br
+		%a{href: "http://gravatar.com/emails"} Gravatar 이미지 바꾸기
