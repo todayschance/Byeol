@@ -1,0 +1,61 @@
+-provide :title, '모든 사용자들'
+
+.inner.wrapper
+	=will_paginate
+
+	%ul.ui.very.relaxed.divided.list#user_list
+		-@users.each do |user|
+			%li.item
+				=gravatar_for user, "ui rounded image"
+				%article.content
+					%header.header
+						=link_to user.name, user
+					%p.description
+						bio가 들어갈 공간
+					=if current_user.admin? && !current_user?(user)
+						%aside.ui.right.pointing.dropdown.icon.button.actions
+							%i.settings.icon{"aria-hidden" => "true"}
+							.menu
+								=link_to "지우기", user, method: :delete, data:{confirm:"진짜?"}, class: "item"
+	= will_paginate
+
+
+-# <div class="inner wrapper">
+
+-# <%= will_paginate %>
+
+-# <ul class="ui minimal comments" id="user_list">
+-# <% @users.each do |user| %>
+-# 	<li>
+-# 		<a href=""></a>
+-# 		<article>
+			
+-# 		</article>
+-# 	</li>
+-# <% end %>
+-# </ul>
+
+-# <%= will_paginate %>
+
+-# </div>
+-# <!-- 	<li class="comment">
+-# 		<a href="" class="avatar">
+-# 			<%= gravatar_for user %>
+-# 		</a>
+-# 		<article class="content">
+-# 			<header class="author"><%= link_to user.name, user %></header>
+-# 			<div class="metadata">
+-# 			<% if user.admin? %>
+-# 				<span>관리자</span>
+-# 			<% end %>
+-# 			</div>
+-# 			<div class="text">
+-# 				biobio
+-# 			</div>
+-# 			<aside class="actions">
+-# 			<% if current_user.admin? && !current_user?(user) %>
+-# 				<%= link_to "지우기", user, method: :delete, data: {confirm:"진짜?"} %>
+-# 			<% end %>
+-# 			</aside>
+-# 		</article>
+-# 	</li> -->

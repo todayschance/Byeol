@@ -21,7 +21,7 @@ $(document).ready(function() {
 	$fixed_nav = $('#nav_for_mobile');
 	$(window).scroll(function() {
 			var sclTop = $(this).scrollTop();
-			if (sclTop > 26)
+			if (sclTop > 56)
 				$($fixed_nav).addClass('inverted')
 			else 
 				$($fixed_nav).removeClass('inverted')

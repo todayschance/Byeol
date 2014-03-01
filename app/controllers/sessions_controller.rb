@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 		user = User.find_by email: params[:session][:email].downcase
 		if user && user.authenticate(params[:session][:password])		
 			sign_in user
-			redirect_to user
+			redirect_back_or root_path
 		else
 			flash[:error] = '열쇠글이 맞지 않거나 없는 계정입니다.'
 			render 'new'

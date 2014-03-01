@@ -20,6 +20,7 @@ a:hover {
 }
 
 .ui.error.message { display: block !important; }
+.message { }
 
 .wrapper {
 	min-width: 200px;
@@ -34,12 +35,22 @@ a:hover {
 
 .mobile_text_right { text-align: right; }
 .mobile_text_center { text-align: center; }
+.every_text_right {text-align: right; }
+.every_text_center { text-align: center; }
+
+.texted { display: inline !important; }
 
 // 
 // Layouts'
 // 
 #root_top { margin-top: 3rem; height: 2rem; }
 #root_divider { margin-top: .8rem; }
+#flash_message {
+	z-index: 999;
+	opacity: 0.9;
+	width: 92%;
+	position: fixed;
+}
 #nav_for_mobile {
 	top: 0;
 	opacity: .9;

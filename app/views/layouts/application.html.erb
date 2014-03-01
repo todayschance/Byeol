@@ -15,7 +15,7 @@
 
 <html lang="ko">
 <head>
-  <title><%= html_title(yield(:html_title)) %></title>
+  <title><%= html_title(yield(:title)) %></title>
 
   <meta charset="utf-8" />
   <meta http-equiv="Content-Type" content="text/html" />
@@ -39,13 +39,14 @@
 <!-- Only for mobile -->
 <nav class="ui fixed menu for mobile" id="nav_for_mobile">
   <a class="launch item"><i class="list layout icon"></i>Content</a>
-  <%= nav_title yield(:nav_title) %>
   <div class="right menu">
     <%= render 'layouts/user_dropmenu' %>
   </div>
 </nav>
 
 <%= render 'layouts/sidebar' %>
+
+<%= render "layouts/flash" %>
 
 <div class="wide wrapper">
   <div id="root_top">
@@ -75,7 +76,6 @@
     JavaScript를 쓰지 못하면 정상적인 이용이 불가능합니다!
   </noscript>
 
-  <%= render "layouts/flash" %>
 
 </div><!-- /wrapper -->
 
@@ -91,6 +91,9 @@
     <div class="ui inverted text menu">
       <%= active_link_to "이 사이트에 대해", about_path, class: "item" %>
       <%= active_link_to "도움!", help_path, class: "item" %>
+      <% if signed_in? %>
+        <%= active_link_to "사용자들", users_path, class: "item" %>
+      <% end %>
     </div>
   </div>
 </footer>

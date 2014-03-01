@@ -33,6 +33,6 @@ module ApplicationHelper
 	end
 
 	def icon_tag icon
-		"<i class=\"#{icon} icon\"></i>" if !icon.empty?
+		"<i class=\"#{icon} icon\"></i>".html_safe if !icon.empty?
 	end
 end
