@@ -1,5 +1,5 @@
 <% flash.each do |name, msg| %>
-<aside class="inner wrapper" id="flash_message">
+<aside id="flash_message">
 <%= content_tag :div, nil, class: "ui message #{name}" do %>
 	<%= content_tag :header, msg %>
 	<i class="link close icon"></i>

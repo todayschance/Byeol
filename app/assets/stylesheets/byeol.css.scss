@@ -49,9 +49,12 @@ a:hover {
 #flash_message {
 	z-index: 999;
 	opacity: 0.9;
-	width: 92%;
+	width: 100%;
+	margin: 0; padding: 0;
 	position: fixed;
 }
+#flash_message > div { margin: 0 8%; }
+
 #nav_for_mobile {
 	top: 0;
 	opacity: .9;
