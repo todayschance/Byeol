@@ -5,9 +5,7 @@
 		<i class="close icon"></i>메뉴 닫기
 	</a>
 <% if signed_in? %>
-	<a class="item">
-		<i class="circular edit icon"></i>서평 쓰기
-	</a>
+	<%= active_iconic_link_to "서평 쓰기", "circular edit", new_review_path, class: "item" %>
 <% end %>
 </div>
 
@@ -15,7 +13,7 @@
 	<%= active_iconic_link_to "홈", "home", root_path, class: "item" %>
 	<%= active_iconic_link_to "책", "book", "/books", class: "item" %>
 	<%= active_iconic_link_to "서평", "file", "/reviews", class: "item" %>
-	<%= active_iconic_link_to "감상", "chat", "/feelings", class: "item" %>
-	<%= active_iconic_link_to "자유", "cloud", "/frees", class: "item" %>
+	<%= active_iconic_link_to "감상", "chat", "/feels", class: "item" %>
+	<%= active_iconic_link_to "잡담", "cloud", "/frees", class: "item" %>
 </div>
 </nav>

@@ -16,17 +16,12 @@ a {
 	text-decoration: none;
 	color: #0063EC;
 }
-a:hover {
-	border-bottom: 1px black;
-}
 
 .ui.error.message { display: block !important; }
-.message { }
 
 .wrapper {
 	min-width: 200px;
 	margin: auto;
-	margin-bottom: 1rem;
 	height: auto;
 }
 
@@ -45,7 +40,7 @@ a:hover {
 // Layouts'
 // 
 #root_top { margin-top: 3rem; height: 2rem; }
-#root_divider { margin-top: .8rem; }
+#root_divider { margin-top: .8rem; margin-bottom: .4rem; }
 #flash_message {
 	z-index: 999;
 	opacity: 0.9;
@@ -122,8 +117,6 @@ a:hover {
 	.wrapper.wide { margin-left: 5%; margin-right: 5%; }
 	.wrapper.small { margin-left: 2%; margin-right: 2%; }
 	.wrapper.inner { margin-left: 7%; margin-right: 7%; }
-
-	.wrapper { margin-bottom: 2rem; }
 
 	#root_top { margin-top: 0; }
 	#root_logo { width: auto; }

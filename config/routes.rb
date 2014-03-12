@@ -1,5 +1,7 @@
 Byeol::Application.routes.draw do
 
+  resources :reviews
+
   root to: "root_pages#home"
   get "/help", to: "root_pages#help"
   get "/about", to: "root_pages#about"

@@ -52,7 +52,7 @@
   <div id="root_top">
     <div id="root_logo">
       <%= image_tag "logo.png", alt: "Logo Image" %>
-      <h1><%= link_to "별바다", root_path %></h1>
+      <h1><%= link_to "서평단", root_path %></h1>
     </div>
 
 
@@ -62,8 +62,8 @@
       <%= active_link_to "홈", root_path, class: "item" %>
       <%= active_link_to "책", "/books", class: "item" %>
       <%= active_link_to "서평", "/reviews", class: "item" %>
-      <%= active_link_to "감상", "/feelings", class: "item" %>
-      <%= active_link_to "자유", "/free", class: "item" %>
+      <%= active_link_to "감상", "/feels", class: "item" %>
+      <%= active_link_to "잡담", "/free", class: "item" %>
       <%= render 'layouts/user_dropmenu' %>
     </div>
     </nav>

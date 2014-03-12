@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>페이지가 없습니다.(404) | 별바다</title>
   <style>
   body {
     background-color: #EFEFEF;
@@ -30,6 +30,11 @@
     line-height: 1.5em;
   }
 
+  h1 > span {
+    margin: 1rem;
+    font-size: 150%;
+  }
+
   body > p {
     width: 33em;
     margin: 0 auto 1em;
@@ -50,9 +55,8 @@
 <body>
   <!-- This file lives in public/404.html -->
   <div class="dialog">
-    <h1>The page you were looking for doesn't exist.</h1>
-    <p>You may have mistyped the address or the page may have moved.</p>
+    <h1><span>404</span>찾고 있는 페이지가 없습니다.</h1>
+    <p>주소를 잘못 입력하였거나, 지워지거나, 옮겨진 페이지입니다.</p>
   </div>
-  <p>If you are the application owner check the logs for more information.</p>
 </body>
 </html>

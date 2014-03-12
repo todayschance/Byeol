@@ -2,7 +2,7 @@ module ApplicationHelper
 
 	# Returns the full title of head of html.
 	def html_title title
-		base_title = "별바다"
+		base_title = "서평단"
 		if title.empty?
 			"#{base_title}: 커뮤니티"
 		else
