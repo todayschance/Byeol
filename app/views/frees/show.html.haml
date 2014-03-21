@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Content:
+  = @free.content
+%p
+  %b User:
+  = @free.user_id
+
+= link_to 'Edit', edit_free_path(@free)
+\|
+= link_to 'Back', frees_path

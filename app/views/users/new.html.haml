@@ -1,0 +1,29 @@
+-provide :html_title, "가입하기"
+= form_for @user, html: { class: "ui form raised segment" } do |f|
+	%h1 지금 가입하세요!
+
+	.field
+		= f.label :name, "이름"
+		= f.text_field :name, class: "form-control", placeholder: "야야"
+
+	.field
+		= f.label :email, "이메일"
+		= f.text_field :email, type: "email", class: "form-control", placeholder: "raishinlove@seolwolhwa.com"
+	.field
+		= f.label :password, "열쇠글"
+		.ui.labeld.input
+			= f.password_field :password, class: "form-control popup-focusing", id: "email_popup", placeholder: "******"
+			.ui.corner.label
+				%i.asterisk.icon.link.popup{"aria-hidden" => "true"}
+	.field
+		= f.label :password_confirmation, "열쇠글 확인"
+		= f.password_field :password_confirmation, class: "form-control", placeholder: "******"
+	%p
+		= link_to '잠깐! 혹시 계정이 이미 있나요?', signin_path
+	.actions
+		= f.submit '가입하도록 하지', class: "ui large positive button"
+	- if @user.errors.any?
+		.ui.error.message
+			%ul
+				- @user.errors.full_messages.each do |msg|
+					%li= msg

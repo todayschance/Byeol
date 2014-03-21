@@ -1,0 +1,17 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "global";
+
+#new_user {
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	h1 { text-align: center; }
+	p, .actions { text-align: center; }
+	.button { width: 100%; }
+}
+
+#user_index {
+	.username > a { font-weight: bold; }
+}

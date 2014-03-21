@@ -1,0 +1,16 @@
+<header id="root_header">
+<div class="container">
+	<h1><a href="/">서평</a></h1>
+	<nav>
+		<ul class="header_items">
+<li class="header_item"><%= icon_link_to 'home', root_path%></li>
+<li class="header_item"><%= icon_link_to 'book', books_path%></li>
+<li class="header_item"><%= icon_link_to 'file', reviews_path%></li>
+<li class="header_item"><%= icon_link_to 'chat', frees_path%></li>
+<li class="header_item"><a href=""><%= icon_tag 'setting' %></a></li>
+<li class="header_button"><%= active_link_to '들어가기', signup_path, class: 'ui button'%></li>
+<li class="header_item"><%= active_link_to '나가기', '/singup_path' %></li>
+		</ul>
+	</nav>
+</div>
+</header>

@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%aside.col-sm-2
+	= link_to 'Edit', edit_user_path(@user)
+	\|
+	= link_to 'Back', users_path
+	
+%main.col-sm-10
+	%header.ui.segment.blue.top.attached
+		%h1.username= @user.name
+	%section.ui.segment.attached
+		%p
+			%b Name:
+			
+		%p
+			%b Email:
+			= @user.email
+	%footer.ui.segment.bottom.attached

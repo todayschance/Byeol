@@ -1,0 +1,31 @@
+%h1 Listing users
+
+%table.ui.stacked.table.segment#user_index
+  %thead
+    %tr
+      %th no
+      %th 이름
+      %th 이메일
+      %th
+      %th 설정
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.id
+        %td.username= link_to user.name, user
+        %td= user.email
+        -# %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td
+        %td
+          .ui.right.pointing.dropdown.icon.button
+            =icon_tag "setting"
+            .menu
+              = iconic_link_to '고치기', 'edit', edit_user_path(user), class: "item"
+  %tfoot
+    %tr
+      %th
+      %th
+        총 3명 중 3명
+      %th
+      %th
+      %th

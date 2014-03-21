@@ -1,0 +1,25 @@
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+	margin-bottom: $root-footer-height+1;
+	background-color: $body-bg;
+	font-size: 16px;
+	color: $text-color;
+}
+a {
+	text-decoration: none;
+	color: $link-color;
+	border-bottom: 1px dotted rgba(255, 255, 255, 0);
+}
+a:hover,
+a:focus {
+	border-color: rgba(255, 255, 255, 1);
+	color: $link-hover-color;
+	text-decoration: none;
+	transition: border .2s ease;
+	transition: color .2s ease;
+}
+
+textarea, input { color: black; }

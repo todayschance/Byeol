@@ -1,0 +1,21 @@
+%h1 Listing frees
+
+%table
+  %tr
+    %th Content
+    %th User
+    %th
+    %th
+    %th
+
+  - @frees.each do |free|
+    %tr
+      %td= free.content
+      %td= free.user_id
+      %td= link_to 'Show', free
+      %td= link_to 'Edit', edit_free_path(free)
+      %td= link_to 'Destroy', free, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Free', new_free_path
