@@ -12,14 +12,12 @@
 	.field
 		= f.label :password, "열쇠글"
 		.ui.labeld.input
-			= f.password_field :password, class: "form-control popup-focusing", id: "email_popup", placeholder: "******"
+			= f.password_field :password, class: "form-control popup-focusing", id: "password_popup", placeholder: "******"
 			.ui.corner.label
-				%i.asterisk.icon.link.popup{"aria-hidden" => "true"}
+				%i.asterisk.icon{"aria-hidden" => "true"}
 	.field
 		= f.label :password_confirmation, "열쇠글 확인"
 		= f.password_field :password_confirmation, class: "form-control", placeholder: "******"
-	%p
-		= link_to '잠깐! 혹시 계정이 이미 있나요?', signin_path
 	.actions
 		= f.submit '가입하도록 하지', class: "ui large positive button"
 	- if @user.errors.any?

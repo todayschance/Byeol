@@ -4,12 +4,7 @@
 @import "global";
 
 #new_user {
-	max-width: 400px;
-	margin-left: auto;
-	margin-right: auto;
-	h1 { text-align: center; }
-	p, .actions { text-align: center; }
-	.button { width: 100%; }
+	@include userform();
 }
 
 #user_index {

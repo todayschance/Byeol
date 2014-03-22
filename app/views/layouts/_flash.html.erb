@@ -1,0 +1,8 @@
+<aside id="flash">
+<% flash.each do |key, value| %>
+  <aside class="ui bottom attached message <%= key %>">
+		<i class="close icon"></i>
+	  <%= value %>
+  </aside>
+<% end %>
+</aside>

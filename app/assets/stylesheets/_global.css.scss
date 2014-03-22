@@ -23,3 +23,13 @@ a:focus {
 }
 
 textarea, input { color: black; }
+
+// 
+@mixin userform() {
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	h1 { text-align: center; }
+	p, .actions { text-align: center; }
+	.button { width: 100%; }
+}

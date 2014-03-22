@@ -1,6 +1,17 @@
 @charset "utf-8";
 @import "settings";
 
+#flash {
+	z-index: 999;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	.message {
+		max-width: 512px;
+		margin: auto;
+	}
+}
+
 #root_header {
 	margin-bottom: 2rem;
 	h1 {
