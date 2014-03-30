@@ -3,10 +3,13 @@
 	%h1 들어가기
 	.field
 		= f.label :email, "이메일"
-		= f.text_field :email, type: "email", class: "form-control", placeholder: "raishinlove@seolwolhwa.com"
+		.ui.input.left.icon
+			= f.text_field :email, type: "email", class: "form-control", placeholder: "raishinlove@seolwolhwa.com"
+			%i.user.icon{"aria-hidden" => "true"}
 	.field
 		= f.label :password, "열쇠글"
-		.ui.labeld.input
+		.ui.labeld.input.left.icon
+			%i.lock.icon{"aria-hidden" => "true"}
 			= f.password_field :password, class: "form-control popup-focusing", id: "password_popup", placeholder: "******"
 			.ui.corner.label
 				%i.asterisk.icon{"aria-hidden" => "true"}

@@ -1,15 +1,19 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
+	before_action :signed_in_user, only: [:edit, :update, :index]
+	before_action :correct_user, only: [:edit, :update]
+	before_action :admin_user, only: [:destroy]
 
 	# GET /users
 	# GET /users.json
 	def index
-		@users = User.all
+		@users = User.paginate(page: params[:page])
 	end
 
 	# GET /users/1
 	# GET /users/1.json
 	def show
+		@frees = @user.frees.all
 	end
 
 	# GET /users/new
@@ -29,8 +33,7 @@ class UsersController < ApplicationController
 		respond_to do |format|
 			if @user.save
 				sign_in @user
-				flash[:success] = "가입되셨습니다!"
-				format.html { redirect_to @user, notice: 'User was successfully created.' }
+				format.html { redirect_to @user, success: '가입되었습니다!' }
 				format.json { render action: 'show', status: :created, location: @user }
 			else
 				format.html { render action: 'new' }
@@ -43,7 +46,7 @@ class UsersController < ApplicationController
 	# PATCH/PUT /users/1.json
 	def update
 		respond_to do |format|
-			if @user.update(user_params)
+			if @user.update(user_params_with_bio)
 				format.html { redirect_to @user, notice: 'User was successfully updated.' }
 				format.json { head :no_content }
 			else
@@ -58,7 +61,7 @@ class UsersController < ApplicationController
 	def destroy
 		@user.destroy
 		respond_to do |format|
-			format.html { redirect_to users_url }
+			format.html { redirect_to users_url, success: '#{@user.name}을 지웠습니다.' }
 			format.json { head :no_content }
 		end
 	end
@@ -72,5 +75,25 @@ class UsersController < ApplicationController
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def user_params
 			params.require(:user).permit(:name, :email, :password, :password_confirmation)
+		end
+
+		def user_params_with_bio
+			params.require(:user).permit(:name, :email, :password, :password_confirmation, :bio)
+		end
+
+		def signed_in_user
+			unless signed_in?
+				store_location
+				redirect_to signin_url, notice: "먼저 로그인해야 합니다."
+			end
+		end
+
+		def correct_user
+			@user = User.find(params[:id])
+			redirect_to(root_url) unless current_user?(@user)
+		end
+
+		def admin_user
+			redirect_to(root_url) unless current_user.admin?
 		end
 end

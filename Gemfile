@@ -15,7 +15,9 @@ gem 'jbuilder', '~> 1.2'
 gem 'bcrypt'
 gem 'bcrypt-ruby'
 gem 'unicorn'
+gem 'maruku'
 gem 'haml'
+gem 'will_paginate'
 
 group :development, :test do
 	gem 'sqlite3'

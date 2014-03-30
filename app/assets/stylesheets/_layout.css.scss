@@ -35,14 +35,14 @@
 		display: inline-block;
 		a, a:hover, a:focus { color: $text-color; }
 	}
-	.header_item, .header_button {
+	li {
 		display: inline-block;
 		a {
 			margin: 0;
 			padding: .5em;
 		}
 	}
-	.header_item a {
+	li a {
 		border-bottom: 2px solid transparent;
 		color: rgba(255, 255, 255, .75);
 		&:hover,
@@ -52,6 +52,14 @@
 		&.active {
 			border-bottom-color: rgba(255, 255, 255, .85);
 		}
+	}
+	li .button {
+		border-bottom: 0;
+		color: $gray;
+	}
+	#outting:before {
+		content: "|";
+		color: rgba(255, 255, 255, .25);
 	}
 }
 
@@ -81,4 +89,26 @@
 		display: inline;
 	}
 	p { display: inline; }
+}
+
+@media (max-width: 420px) {
+	#root_header {
+		h1 {
+			width: 100%;
+			display: block;
+			text-align: center;
+		}
+		nav {
+			display: block;
+			margin: .3em;
+			float: none;
+			.header_items {
+				float: none;
+				display: block;
+				width: 320px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
 }

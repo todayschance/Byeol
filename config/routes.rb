@@ -2,17 +2,17 @@ Byeol::Application.routes.draw do
 
   resources :books
 
-  resources :frees
+  resources :frees, only: [:new, :create, :destroy, :index, :edit]
 
   resources :reviews
 
   resources :users
+  get '/signup' => 'users#new'
 
   resources :sessions, only: [:new, :create, :destroy]
-
-  get '/signup' => 'users#new'
   get '/signin' => 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: 'delete'
+
 
   root 'static_pages#home'
   get 'help' => 'static_pages#help'
