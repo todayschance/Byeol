@@ -1,36 +1,40 @@
 source 'https://rubygems.org'
+
 ruby '2.1.0'
 
 gem 'rails', '4.0.2'
-gem 'sass-rails', '4.0.1'
-gem 'uglifier', '2.1.1'
-gem 'coffee-rails', '4.0.1'
-gem 'haml'
-gem 'jquery-rails', '3.0.4'
-gem 'turbolinks', '1.1.1'
-gem 'will_paginate'
-gem 'unicorn'
+# gem 'bootstrap-sass'
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 # gem 'normalize-rails'
-# gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+gem 'sass-rails', '~> 4.0.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'jbuilder', '~> 1.2'
+gem 'bcrypt'
 gem 'bcrypt-ruby'
-gem 'jbuilder', '1.0.2'
+gem 'unicorn'
+gem 'maruku'
+gem 'haml'
+gem 'will_paginate'
 
 group :development, :test do
-	gem 'sqlite3', '1.3.8'
-	gem 'rspec-rails', '2.13.1'
+	gem 'sqlite3'
 	gem 'haml-rails'
+	gem 'rspec-rails'
 end
 
 group :test do
-	gem 'selenium-webdriver', '2.35.1'
-	gem 'capybara', '2.1.0'
+	gem 'selenium-webdriver'
+	gem 'capybara'
 end
 
 group :production do
-	gem 'pg', '0.15.1'
-	gem 'rails_12factor', '0.0.2'
+	gem 'pg'
+	gem 'rails_12factor'
 end
 
 group :doc do
-  gem 'sdoc', '0.3.20', require: false
+  gem 'sdoc', require: false
 end

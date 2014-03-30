@@ -1,17 +1,34 @@
-- provide :title, "가입하기"
+-provide :html_title, "가입하기"
+= form_for @user, html: { class: "ui form raised segment" } do |f|
 
-.inner.wrapper
-	%header.ui.attached.message.mobile_text_center
-		%h1 가입하기
-		
-	=form_for @user, html: {class: "ui form fluid attached segment"} do |f|
-		= render 'shared/error_message'
-		= field_for f, "user", "이름", :name, "text", "홍길동"
-		= described_field_for f, "mail", "이메일", :email, "email", "example@example", "이메일은 로그인 할 때 사용됩니다."
-		= described_field_for f, "lock", "열쇠글", :password, "password", "••••••", "6자리 이상이여야 합니다."
-		= field_for f, "lock", "열쇠글 확인", :password_confirmation, "password", "••••••"
-		.mobile_text_center
-			= f.submit "계정 만들기", class: "ui submit blue button"
+	%h1 지금 가입하세요!
 
-	%aside.ui.bottom.attached.message.mobile_text_center
-		=link_to "이미 계정이 있나요?", signin_path
+	.field
+		= f.label :name, "이름"
+		.ui.left.icon.input
+			= f.text_field :name, class: "form-control", placeholder: "야야"
+			%i.users.icon{"aria-hidden" => "true"}
+	.field
+		= f.label :email, "이메일"
+		.ui.left.icon.input
+			= f.text_field :email, type: "email", class: "form-control", placeholder: "raishinlove@seolwolhwa.com"
+			%i.mail.icon{"aria-hidden" => "true"}
+	.field
+		= f.label :password, "열쇠글"
+		.ui.left.icon.labeld.input
+			= f.password_field :password, class: "form-control popup-focusing", id: "password_popup", placeholder: "******"
+			%i.lock.icon{"aria-hidden" => "true"}
+			.ui.corner.label
+				%i.asterisk.icon{"aria-hidden" => "true"}
+	.field
+		= f.label :password_confirmation, "열쇠글 확인"
+		.ui.left.icon.labeld.input
+			= f.password_field :password_confirmation, class: "form-control", placeholder: "******"
+
+	.actions
+		= f.submit '가입하도록 하지', class: "ui large fluid positive button"
+	- if @user.errors.any?
+		.ui.error.message
+			%ul
+				- @user.errors.full_messages.each do |msg|
+					%li= msg

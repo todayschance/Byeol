@@ -1,0 +1,15 @@
+%aside.col-sm-4.col-md-3#user_sidebar
+	#profile
+		.image
+			= gravatar_for @user, class: "ui image circular"
+			- if @user.admin?
+				.ui.corner.label#admin_label
+					%i.asterisk.icon{"aria-hidden" => "true"}
+		.content
+			%h1#username= @user.name
+			%p.description= @user.bio
+
+	%nav.ui.secondary.pointing.vertical.menu
+		= active_link_to '정보', @user, class: "item"
+		-if current_user?(@user)
+			= iconic_link_to '정보 고치기', 'edit', edit_user_path(@user), class: "item"

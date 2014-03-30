@@ -1,25 +1,27 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-form.ui.form.segment {
-	.grid-r > .field { margin-bottom: 0; }
-	.grid-r { margin-bottom: 1rem; }
+@import "global";
+
+#new_user {
+	@include userform();
 }
 
-#user_list {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+#user_index {
+	.username > a { font-weight: bold; }
+}
 
-	.header a {
-		color: black;
-		text-shadow: 0 1px 1px white;
+#user_sidebar {
+	#username {
+		text-align: center;
+		font-size: 1.4rem;
+		margin-top: .5rem;
 	}
-	li::before { content: none; }
-	.item { width: 100%; }
-	.actions {
-		position: absolute;
-		top: 2rem;
-		right: 1rem;
+
+	#profile {
+		.image {
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 }

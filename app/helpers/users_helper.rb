@@ -1,13 +1,9 @@
 module UsersHelper
-	# Returns the Gravatar img for the given user.
-	def gravatar_for user, class_options={}
-		g_id = Digest::MD5::hexdigest user.email.downcase
-		g_url = "https://secure.gravatar.com/avatar/#{g_id}"
-		image_tag g_url, alt: user.name,
-										 class: class_options
-	end
-
-	def icon_for icon
-		tag :i, class: "ui icon #{icon}"
+	def gravatar_for(user, options={})
+		options.store("alt", "gravatar image")
+		size = options[:size]
+		gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
+		gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
+		return image_tag(gravatar_url, options)
 	end
 end

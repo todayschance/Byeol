@@ -1,15 +1,22 @@
 Byeol::Application.routes.draw do
 
-  root to: "root_pages#home"
-  get "/help", to: "root_pages#help"
-  get "/about", to: "root_pages#about"
-  get "/signup", to: "users#new"
-  get "/signin", to: "sessions#new"
-  match "/signout", to: "sessions#destroy", via: 'delete'
+  resources :books
 
-  # Users
+  resources :frees, only: [:new, :create, :destroy, :index, :edit]
+
+  resources :reviews
+
   resources :users
+  get '/signup' => 'users#new'
+
   resources :sessions, only: [:new, :create, :destroy]
+  get '/signin' => 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: 'delete'
+
+
+  root 'static_pages#home'
+  get 'help' => 'static_pages#help'
+  get 'about' => 'static_pages#about'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,15 +1,19 @@
--provide :title, "로그인"
-
-.inner.wrapper
-	%header.ui.attached.message.mobile_text_center
-		%h1 로그인
-
-	=form_for :session, url: sessions_path, html:{class: "ui form fluid attached segment"} do |f|
-		=field_for f, "mail", "이메일", :email, "email", "example@example"
-		=described_field_for f, "lock", "열쇠글", :password, "password", "••••••", "6자리 이상입니다."
-		.mobile_text_center
-			=f.submit "들어가기", class: "ui blue submit button"
-
-	%aside.ui.bottom.attached.message.mobile_text_center
-		=link_to "새로 가입하고 싶나요?", signup_path
-		
+- provide :html_title, '들어가기'
+= form_for :session, url: sessions_path, html: { class: "ui form raised segment", id: "new_user" } do |f|
+	%h1 들어가기
+	.field
+		= f.label :email, "이메일"
+		.ui.input.left.icon
+			= f.text_field :email, type: "email", class: "form-control", placeholder: "raishinlove@seolwolhwa.com"
+			%i.user.icon{"aria-hidden" => "true"}
+	.field
+		= f.label :password, "열쇠글"
+		.ui.labeld.input.left.icon
+			%i.lock.icon{"aria-hidden" => "true"}
+			= f.password_field :password, class: "form-control popup-focusing", id: "password_popup", placeholder: "******"
+			.ui.corner.label
+				%i.asterisk.icon{"aria-hidden" => "true"}
+	%p
+		= link_to '아직 계정이 없나요?', signup_path
+	.actions
+		= f.submit '들어가기', class: "ui large positive button"

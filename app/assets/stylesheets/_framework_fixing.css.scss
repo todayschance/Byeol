@@ -1,0 +1,13 @@
+.segment {
+	color: $dark-text-color;
+}
+.ui.secondary.pointing.vertical.menu {
+	width: 100%;
+	& > a { color: rgba(255, 255, 255, .75); }
+	& > a.item:hover { color: rgba(255, 255, 255, .85); }
+	& > .item { border-color: rgba(255, 255, 255, .25); }
+	& > .item.active {
+		color: rgba(255, 255, 255, .95);
+		border-color: rgba(255, 255, 255, .45);
+	}
+}

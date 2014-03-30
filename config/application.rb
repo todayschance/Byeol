@@ -24,17 +24,7 @@ module Byeol
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    config.assets.precompile += %w(*.png *.jpg *.jpeg *gif)
     I18n.enforce_available_locales = true
-
-    # field_with_errors
-    config.action_view.field_error_proc = Proc.new do |html_tag, instance|
-        class_attr_index = html_tag.index 'class="'
-        if class_attr_index
-            html_tag.insert class_attr_index+7, 'error '
-        else
-            html_tag.insert html_tag.index('>'), ' class="error"'
-        end
-    end
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
   end
 end

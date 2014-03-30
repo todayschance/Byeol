@@ -15,8 +15,4 @@
 /log/*.log
 /tmp
 
-# secure_token
 .secret
-
-# server env file
-.env

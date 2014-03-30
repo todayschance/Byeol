@@ -13,34 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require semantic-ui
 //= require_tree .
-
-$(document).ready(function() {
-
-	// Fixed Nav
-	$fixed_nav = $('#nav_for_mobile');
-	$(window).scroll(function() {
-			var sclTop = $(this).scrollTop();
-			if (sclTop > 56)
-				$($fixed_nav).addClass('inverted')
-			else 
-				$($fixed_nav).removeClass('inverted')
-	});
-
-	readySemantic();
-});
-
-var readySemantic = function() {
-
-	$messageClose = $('.message > .close');
-	$rootSidebar = $('#root_sidebar');
-
-	$($messageClose).on('click', function() {
-		$(this).closest('#flash_message').fadeOut();
-	});
-
-	$($rootSidebar).sidebar('attach events', '.launch');
-
-	// dropdowns
-	$('.ui.dropdown').dropdown();
-}

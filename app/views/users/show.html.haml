@@ -1,16 +1,12 @@
--provide :title, @user.name
+= render 'users/sidebar'
+	
+%main.col-sm-8.col-md-9
+	%section.ui.segment
+		%b Email:
+		= @user.email
+		%p= @user.bio
 
-.ui.page.grid
-	.column
-		%h1.ui.top.attached.segment.colored.blue.inverted
-			= gravatar_for @user, "ui avatar circular image"
-			= @user.name
-
-		.ui.attached.segment
-			.grid-r
-				.grid-1-5
-					뚜ㄸ
-				.grid-4-5
-					뚜ㄸ
-		.ui.bottom.attached.segment
-			%p orb!
+	%section.ui.segment
+		- if @user.frees.any?
+			= @user.frees.count
+			= render @frees

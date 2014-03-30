@@ -1,2 +1,0 @@
-module RootPagesHelper
-end
