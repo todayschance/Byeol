@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="ko">
+  <title>Byeol</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<!-- Header -->
+<header class="navbar navbar-default navbar-fixed-top" id="root_header">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+      </button>
+      <%= link_to '동성고 서평단', root_path, class: 'navbar-brand' %>
+		</div>
+		<nav class="navbar-collapse collapse">
+			<form class="navbar-form navbar-left" role="search">
+				<div class="input-group">
+					<div class="input-group-btn">
+						<div class="btn btn-default dropdown-toggle" data-toggle="dropdown">서평으로</div>
+						<ul class="dropdown-menu">
+							<li><a href="">책으로</a></li>
+							<li><a href="">서평으로</a></li>
+							<li><a href="">글쓴이로</a></li>
+						</ul>
+					</div>
+					<input type="text" class="form-control" placeholder="찾아보세요">
+				</div>
+			</form>
+			<ul class="nav navbar-nav">
+				<%= content_tag(:li, link_to('책', '/#')) %>
+				<%= content_tag(:li, link_to('서평', '/#')) %>
+				<%= content_tag(:li, link_to('잡담', '/#')) %>
+			</ul>
+			<div>
+				<a href="" class="btn btn-default navbar-btn navbar-right">가입하기</a>
+		</nav>
+	</div>
+</header>
+
+<!-- Yield -->
+<div class="container">
+	<%= yield %>
+</div>
+
+<!-- Footer -->
+<footer class="text-muted" id="root_footer">
+	<span id="copyright">
+		Developed by <a href="http://compiztab.github.io">Compiztab</a>:
+	</span>
+	<nav>
+		<%= link_to '이 사이트에 대해', about_path %> | 
+		<%= link_to '도움말', help_path %> | 
+		<%= link_to '사이트 지도', sitemap_path %> | 
+		<%= link_to '관리자', '/#' %>
+	</nav>
+</footer>
+
+</body>
+</html>

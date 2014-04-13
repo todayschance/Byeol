@@ -1,0 +1,52 @@
+@import "bootstrap";
+$body-bg: #2c3e50;
+$text-color: $gray-lighter;
+
+@import "layouts";
+@import "static_pages";
+
+// customs...
+
+// form semantic ui
+.ui.input {
+	position: relative;
+	display: inline-block;
+	input {
+		color: rgba(0, 0, 0, .8);
+		border-radius: .3125rem;
+		width: 100%;
+		padding: .65em 1em;
+		border: 1px solid rgba(0, 0, 0, .15);
+		-webkit-transition: background-color .3s ease-out,-webkit-box-shadow .2s ease,border-color .2s ease;
+		-moz-transition: background-color .3s ease-out,box-shadow .2s ease,border-color .2s ease;
+		transition: background-color .3s ease-out,box-shadow .2s ease,border-color .2s ease;
+	}
+	input:active {
+		border-color: rgba(0,0,0,.3);
+		background-color: #FAFAFA;
+	}
+	input:focus~.glyphicon {
+		color: rgba(0, 0, 0, .8);
+	}
+	.glyphicon {
+		color: rgba(0, 0, 0, .4);
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		padding-top: .8rem;
+		width: 3rem;
+		text-align: center;
+		transition: color .3s ease-out;
+	}
+}
+.ui.iconed.input {
+	input {
+		padding-left: 3rem;
+		padding-right: 1.5rem;
+	}
+	.glyphicon {
+		right: auto;
+		left: 1px;
+	}
+}

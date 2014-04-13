@@ -1,0 +1,16 @@
+.row
+	%section.col-sm-8
+		소개 페이지
+	%section.col-sm-4
+		%form#login_form
+			%label 이메일
+			.ui.iconed.input
+				%input{type: 'email', class: 'form-control', placeholder: 'tassadar@templararchive.net'}
+				%span.glyphicon.glyphicon-envelope
+
+			%label 열쇠글
+			.ui.iconed.input
+				%input{type: 'password', class: 'form-control', placeholder: '• • • • • •'}
+				%span.glyphicon.glyphicon-lock
+
+			%button{type: "button", class: "btn btn-primary btn-lg pull-right"} 들어가기

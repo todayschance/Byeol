@@ -1,0 +1,37 @@
+@import "bootstrap";
+$root_footer_height: 2rem;
+
+body, html {
+	min-height: 100%;
+}
+
+body {
+	padding-top: 70px;
+	margin-bottom: $root_footer_height + 1rem;
+	font-family: 'Apple SD Gothic Neo', '나눔고딕', NanumGothic, '맑은 고딕', sans-serif;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+input, textarea { color: rgba(0, 0, 0, .8);}
+
+#root_header {
+	form {
+		max-width: 300px;
+	}
+}
+
+#root_footer {
+	position: absolute;
+	height: $root_footer_height;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	#copyright {
+		margin-right: 5px;
+	}
+	nav	{
+		display: inline-block;
+	}
+	a { color: $gray-light; }
+}
